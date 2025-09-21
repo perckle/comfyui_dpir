@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "comfyui_dpir"
-version = "0.0.1"
-description = "A spandrel based dpir inference node for ComfyUI"
+version = "1.0.0"
+description = "A dpir/DRUnet inference node for ComfyUI"
 authors = [
   {name = "", email = "eric.n.jenner@gmail.com"}
 ]
