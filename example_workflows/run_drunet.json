@@ -1,0 +1,323 @@
+{
+  "id": "3368b10f-1df8-4566-a360-08aafe6047f7",
+  "revision": 0,
+  "last_node_id": 18,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 14,
+      "type": "ImageDenoiseWithDPIR",
+      "pos": [
+        109.98441314697266,
+        675.422607421875
+      ],
+      "size": [
+        270,
+        102
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 29
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_dpir",
+        "Node name for S&R": "ImageDenoiseWithDPIR"
+      },
+      "widgets_values": [
+        5,
+        512
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveImage",
+      "pos": [
+        447.93115234375,
+        674.7571411132812
+      ],
+      "size": [
+        270,
+        270
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 28
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "DPIR"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        -364.09381103515625,
+        708.8706665039062
+      ],
+      "size": [
+        274.080078125,
+        102
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            30
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.60",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "undefined",
+        "image"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -363.4132995605469,
+        599.6246337890625
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "UpscaleModelLoader",
+        "models": [
+         {
+           "name": "drunet_color.safetensors",
+           "url": "https://huggingface.co/perckle/DPIR/resolve/main/drunet_color.safetensors?download=true",
+           "hash": "4d99b153498cc9b05b0d4bf6c0ef544b5a0a56c4af3378086d97fe1eefa081bd",
+           "hash_type": "SHA256",
+           "directory": "upscale_models"
+         }
+       ]
+      },
+      "widgets_values": [
+        "drunet_color.safetensors"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -364.0937194824219,
+        483.3711853027344
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "UpscaleModelLoader",
+        "models": [
+         {
+           "name": "drunet_deblocking_color.safetensors",
+           "url": "https://huggingface.co/perckle/DPIR/resolve/main/drunet_deblocking_color.safetensors?download=true",
+           "hash": "f72985f5eabdd13f47d0db30e9db22c38714e1e4e2ae3ac69667a1241971974e",
+           "hash_type": "SHA256",
+           "directory": "upscale_models"
+         }
+       ]
+      },
+      "widgets_values": [
+        "drunet_deblocking_color.safetensors"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -364.0935974121094,
+        372.2712707519531
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "UpscaleModelLoader",
+        "models": [
+         {
+           "name": "drunet_gray.safetensors",
+           "url": "https://huggingface.co/perckle/DPIR/resolve/main/drunet_gray.safetensors?download=true",
+           "hash": "668a79032ea64d9a1da5a2575ecc3fba66e92ddc5c858faec7cdef78edfc8093",
+           "hash_type": "SHA256",
+           "directory": "upscale_models"
+         }
+       ]
+      },
+      "widgets_values": [
+        "drunet_gray.safetensors"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -369.59381103515625,
+        256.7711486816406
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "UpscaleModelLoader",
+        "models": [
+         {
+           "name": "drunet_deblocking_grayscale.safetensors",
+           "url": "https://huggingface.co/perckle/DPIR/resolve/main/drunet_deblocking_grayscale.safetensors?download=true",
+           "hash": "6475438d24b0597777fd1bbfa5c901a127cade91ded7ed81398624fb118fb4cf",
+           "hash_type": "SHA256",
+           "directory": "upscale_models"
+         }
+       ]
+      },
+      "widgets_values": [
+        "drunet_deblocking_grayscale.safetensors"
+      ]
+    }
+  ],
+  "links": [
+    [
+      28,
+      14,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      6,
+      0,
+      14,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      30,
+      15,
+      0,
+      14,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909092,
+      "offset": [
+        722.6935129394539,
+        -175.37124689453026
+      ]
+    },
+    "frontendVersion": "1.26.15"
+  },
+  "version": 0.4
+}
